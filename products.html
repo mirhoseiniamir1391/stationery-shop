@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مشاهده محصولات لوازم‌التحریر فروشگاه جمهوری">
+  <title>محصولات لوازم‌التحریر | فروشگاه جمهوری</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .products-header {
+      padding: 45px 0 25px;
+    }
+
+    .products-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin: 8px 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      padding: 20px 0 65px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 18px;
+    }
+
+    .product-photo {
+      height: 210px;
+      display: grid;
+      place-items: center;
+      background: var(--panel-light);
+      color: var(--muted);
+      overflow: hidden;
+    }
+
+    .product-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-info h2 {
+      font-size: 1.1rem;
+      margin: 0 0 8px;
+    }
+
+    .product-price {
+      color: var(--gold);
+      font-weight: 800;
+      margin: 12px 0;
+    }
+
+    .order-link {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: #203650;
+      color: var(--text);
+    }
+
+    .empty-products {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 45px 20px;
+      border: 1px dashed #40536c;
+      border-radius: 18px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 750px) {
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">ج</span>
+      <span>فروشگاه <strong>جمهوری</strong></span>
+    </a>
+    <a class="contact-small" href="tel:09137756366">تماس با ما</a>
+  </header>
+
+  <main>
+    <section class="products-header">
+      <a class="back-link" href="index.html">→ بازگشت به صفحه اصلی</a>
+      <span class="eyebrow">فروشگاه جمهوری</span>
+      <h1>لوازم‌التحریر</h1>
+      <p style="color:var(--muted)">
+        محصولات فروشگاه را مشاهده کنید. برای سفارش یا اطلاع از موجودی تماس بگیرید.
+      </p>
+    </section>
+
+    <section class="product-grid" id="productGrid">
+      <div class="empty-products">
+        <h2>محصولات به‌زودی اضافه می‌شوند</h2>
+        <p>در حال آماده‌سازی فهرست محصولات فروشگاه جمهوری هستیم.</p>
+        <a class="order-link" href="tel:09137756366">تماس با فروشگاه</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="index.html">فروشگاه جمهوری</a>
+    <p>لوازم‌التحریر، چاپ و کپی و خدمات کامپیوتر</p>
+  </footer>
+
+</body>
+</html>
