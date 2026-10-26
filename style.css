@@ -1,0 +1,52 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #263238;
+    direction: rtl;
+    text-align: right;
+}
+
+header {
+    background-color: #3659a2;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+header h1 {
+    margin: 0 0 12px;
+    font-size: 30px;
+}
+
+header p {
+    margin: 0;
+}
+
+main {
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.welcome {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.welcome h2 {
+    color: #3659a2;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #667085;
+}
