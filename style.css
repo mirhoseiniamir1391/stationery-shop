@@ -1,15 +1,15 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --bg: #0b0f19;
-  --panel: #131a29;
-  --panel-light: #192337;
-  --text: #f3f5fb;
-  --muted: #a4aec2;
-  --accent: #65e0cb;
-  --accent-dark: #102e30;
-  --border: #293448;
+  --bg: #07111f;
+  --panel: #101e31;
+  --panel-light: #15263d;
+  --gold: #f4c95d;
+  --blue: #32b9ff;
+  --text: #f5f7fb;
+  --muted: #a9b7ca;
+  --border: rgba(255,255,255,.1);
 }
 
 * {
@@ -22,9 +22,9 @@ html {
 
 body {
   margin: 0;
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
   background: var(--bg);
   color: var(--text);
-  font-family: "Vazirmatn", Tahoma, Arial, sans-serif;
   line-height: 1.9;
 }
 
@@ -34,68 +34,79 @@ a {
 }
 
 .topbar {
-  max-width: 1160px;
+  width: min(1180px, 92%);
   margin: auto;
-  padding: 20px 24px;
+  min-height: 82px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 20px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 19px;
-  font-weight: 600;
-}
-
-.brand-icon {
-  display: grid;
-  place-items: center;
-  width: 43px;
-  height: 43px;
-  border-radius: 13px;
-  background: var(--accent);
-  color: #081513;
-  font-size: 25px;
+  font-size: 1.15rem;
   font-weight: 800;
 }
 
 .brand strong {
-  color: var(--accent);
+  color: var(--gold);
+}
+
+.brand-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  color: var(--gold);
+  font-size: 1.6rem;
+  background: #14243a;
 }
 
 .contact-small {
   border: 1px solid var(--border);
+  padding: 8px 20px;
   border-radius: 12px;
-  padding: 7px 18px;
+  transition: .2s;
+}
+
+.contact-small:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+main {
+  width: min(1180px, 92%);
+  margin: auto;
 }
 
 .hero {
-  max-width: 1160px;
-  margin: 24px auto 0;
-  padding: 48px 24px 64px;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1.05fr .95fr;
   align-items: center;
-  gap: 48px;
+  gap: 45px;
+  padding: 65px 0 80px;
 }
 
 .eyebrow {
-  display: inline-block;
-  color: var(--accent);
-  font-size: 13px;
+  color: var(--gold);
+  font-size: .9rem;
   font-weight: 700;
-  letter-spacing: 0.2px;
 }
 
 .hero h1 {
-  margin: 14px 0;
-  max-width: 620px;
-  font-size: clamp(30px, 4.2vw, 49px);
-  line-height: 1.55;
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  line-height: 1.45;
+  margin: 12px 0 20px;
+  font-weight: 900;
+}
+
+.hero h1::first-line {
+  color: var(--text);
 }
 
 .hero-content > p,
@@ -108,90 +119,94 @@ a {
 }
 
 .hero-content > p {
-  max-width: 540px;
+  max-width: 560px;
+  font-size: 1.05rem;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 27px;
+  margin-top: 28px;
 }
 
 .btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 11px 22px;
-  border-radius: 12px;
+  padding: 12px 23px;
+  border-radius: 13px;
   font: inherit;
   font-weight: 700;
-  transition: transform 0.2s, background 0.2s;
+  cursor: pointer;
+  transition: transform .2s, background .2s;
 }
 
-.btn:hover,
-.social-card:hover {
-  transform: translateY(-2px);
+.btn:hover {
+  transform: translateY(-3px);
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #081513;
+  color: #151b25;
+  background: linear-gradient(135deg, #ffe49a, var(--gold));
+  box-shadow: 0 8px 28px rgba(244,201,93,.15);
 }
 
 .btn-outline {
-  border: 1px solid var(--border);
-  background: var(--panel);
+  border: 1px solid #40536c;
+  background: #101e31;
 }
 
 .shop-photo {
-  position: relative;
-  min-height: 320px;
+  min-height: 350px;
+  border: 1px solid rgba(50,185,255,.45);
+  border-radius: 28px;
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 25px;
+  position: relative;
   background:
-    radial-gradient(ellipse at 20% 20%, #23534f 0, transparent 45%),
-    linear-gradient(145deg, #1a2638, #111522 70%);
+    radial-gradient(ellipse at top, #193d63, transparent 65%),
+    linear-gradient(145deg, #152b45, #081321);
+  box-shadow: 0 25px 70px rgba(0,0,0,.28);
 }
 
 .shop-photo img {
-  position: absolute;
+  display: block;
   width: 100%;
   height: 100%;
+  min-height: 350px;
+  position: absolute;
   inset: 0;
   object-fit: cover;
 }
 
 .photo-placeholder {
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: none;
+  height: 350px;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   gap: 8px;
   color: var(--muted);
   text-align: center;
+  padding: 20px;
 }
 
 .photo-symbol {
-  color: var(--accent);
-  font-size: 54px;
+  font-size: 3rem;
+  color: var(--gold);
 }
 
 .photo-placeholder strong {
   color: var(--text);
-  font-size: 19px;
 }
 
 .section {
-  max-width: 1160px;
-  margin: auto;
-  padding: 60px 24px;
+  padding: 65px 0;
 }
 
 .section-heading {
-  margin-bottom: 28px;
+  text-align: center;
+  margin-bottom: 32px;
 }
 
 .section-heading h2,
@@ -199,77 +214,86 @@ a {
 .payment h2,
 .download-section h2,
 .contact-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
   margin: 8px 0;
-  font-size: clamp(23px, 3vw, 31px);
+  line-height: 1.6;
 }
 
 .service-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  gap: 18px;
 }
 
 .service-card {
-  padding: 24px 20px;
-  background: var(--panel);
+  padding: 25px 20px;
   border: 1px solid var(--border);
-  border-radius: 17px;
-  transition: border-color 0.2s, transform 0.2s;
+  border-radius: 20px;
+  background: linear-gradient(145deg, var(--panel-light), var(--panel));
+  transition: transform .25s, border-color .25s;
 }
 
 .service-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
+  transform: translateY(-6px);
+  border-color: rgba(244,201,93,.65);
 }
 
 .service-icon {
-  font-size: 30px;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  background: rgba(50,185,255,.1);
+  font-size: 1.8rem;
 }
 
 .service-card h3 {
-  margin: 12px 0 6px;
-  font-size: 17px;
+  font-size: 1.1rem;
+  margin: 16px 0 8px;
 }
 
 .service-card p {
-  margin: 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: .92rem;
+  margin-bottom: 0;
 }
 
 .advertising {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
   align-items: center;
-  gap: 28px;
+  padding: 35px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: linear-gradient(120deg, #122942, #101a2a);
 }
 
 .ad-placeholder {
-  min-height: 210px;
-  padding: 24px;
-  border: 1px dashed #53647d;
-  border-radius: 20px;
-  background: linear-gradient(130deg, #1b2938, #142c2e);
+  min-height: 180px;
+  border: 1px dashed #526982;
+  border-radius: 18px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   gap: 8px;
-  font-size: 19px;
-  font-weight: 700;
+  color: var(--gold);
+  text-align: center;
+  padding: 20px;
 }
 
 .ad-placeholder small {
   color: var(--muted);
-  font-size: 13px;
-  font-weight: 400;
 }
 
 .social-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 18px;
+  max-width: 800px;
+  margin: auto;
 }
 
 .social-card {
@@ -279,106 +303,101 @@ a {
   padding: 20px;
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  transition: transform 0.2s, border-color 0.2s;
+  border-radius: 18px;
+  transition: border-color .2s, transform .2s;
+}
+
+.social-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-3px);
 }
 
 .social-card > span {
-  font-size: 27px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #12365a;
+  border-radius: 15px;
+  font-size: 1.5rem;
 }
 
 .social-card div {
-  flex: 1;
-}
-
-.social-card strong,
-.social-card small {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .social-card small {
   color: var(--muted);
-  font-size: 13px;
 }
 
 .social-card b {
-  color: var(--accent);
-  font-size: 22px;
+  margin-right: auto;
+  color: var(--blue);
 }
 
 .payment {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 25px;
+  padding: 30px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 22px;
 }
 
 .card-number {
-  padding: 22px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 17px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 #cardNumber {
-  display: block;
   direction: ltr;
-  font-size: clamp(19px, 3vw, 27px);
-  font-weight: 700;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-weight: 800;
   letter-spacing: 1px;
-  margin-bottom: 15px;
+  color: var(--gold);
 }
 
-.card-number button {
-  border: 0;
-  border-radius: 10px;
-  padding: 10px 17px;
-  background: var(--accent);
-  color: #081513;
+#copyCard {
   font: inherit;
-  font-weight: 700;
+  background: #203650;
+  border: 1px solid #415873;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 16px;
   cursor: pointer;
 }
 
 #copyMessage {
-  display: block;
-  min-height: 24px;
-  margin-top: 8px;
-  color: var(--accent);
-  font-size: 13px;
+  color: #78e0ad;
+  font-size: .85rem;
 }
 
 .download-section {
-  max-width: 1112px;
-  margin: 20px auto;
-  padding: 28px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: linear-gradient(120deg, #142b2c, #172034);
-  border: 1px solid #31504e;
-  border-radius: 20px;
+  gap: 22px;
+  padding: 28px;
+  margin: 65px 0;
+  border: 1px solid rgba(50,185,255,.3);
+  border-radius: 22px;
+  background: linear-gradient(110deg, #112c47, #101a2a);
 }
 
 .download-icon {
+  flex: 0 0 60px;
+  height: 60px;
   display: grid;
   place-items: center;
-  flex-shrink: 0;
-  width: 58px;
-  height: 58px;
-  border-radius: 16px;
-  background: var(--accent);
-  color: #081513;
-  font-size: 35px;
-}
-
-.download-section > div:nth-child(2) {
-  flex: 1;
-}
-
-.download-section h2 {
-  font-size: 22px;
+  background: #153c5c;
+  color: var(--blue);
+  border-radius: 18px;
+  font-size: 2rem;
 }
 
 .download-section p {
@@ -386,16 +405,24 @@ a {
 }
 
 .coming-soon {
-  flex-shrink: 0;
-  border: 1px solid #47635f;
+  margin-right: auto;
+  white-space: nowrap;
+  color: var(--gold);
+  border: 1px solid rgba(244,201,93,.45);
   border-radius: 30px;
-  padding: 6px 14px;
-  color: var(--accent);
-  font-size: 13px;
+  padding: 5px 14px;
+  font-size: .85rem;
 }
 
 .contact-section {
   text-align: center;
+  padding: 50px 20px;
+  margin-bottom: 65px;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at top, rgba(50,185,255,.12), transparent 65%),
+    var(--panel);
+  border: 1px solid var(--border);
 }
 
 .contact-section .btn {
@@ -403,86 +430,131 @@ a {
 }
 
 footer {
-  margin-top: 35px;
-  padding: 35px 20px;
-  border-top: 1px solid var(--border);
   text-align: center;
-  background: #090c14;
+  padding: 38px 20px;
+  border-top: 1px solid var(--border);
+  background: #050c15;
 }
 
 .footer-brand {
-  display: inline-flex;
   justify-content: center;
 }
 
 footer p,
 footer small {
   color: var(--muted);
-  font-size: 13px;
 }
 
-@media (max-width: 800px) {
+footer small {
+  font-size: .8rem;
+}
+
+@media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding-top: 30px;
+    gap: 30px;
+    padding-top: 35px;
   }
 
-  .shop-photo,
-  .photo-placeholder {
-    min-height: 250px;
+  .shop-photo {
+    min-height: 300px;
+  }
+
+  .shop-photo img {
+    min-height: 300px;
   }
 
   .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .advertising,
-  .payment {
-    grid-template-columns: 1fr;
-  }
-
-  .download-section {
-    margin: 20px 16px;
-  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .topbar {
-    padding: 15px;
+    min-height: 70px;
   }
 
   .brand {
-    font-size: 16px;
+    font-size: 1rem;
+  }
+
+  .brand-icon {
+    width: 38px;
+    height: 38px;
   }
 
   .contact-small {
     padding: 6px 12px;
-    font-size: 13px;
+    font-size: .9rem;
   }
 
-  .hero,
-  .section {
-    padding-right: 17px;
-    padding-left: 17px;
+  .hero {
+    padding: 30px 0 45px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
   }
 
   .service-grid,
-  .social-grid {
+  .social-grid,
+  .advertising {
     grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 22px;
+  }
+
+  .section {
+    padding: 42px 0;
+  }
+
+  .advertising {
+    padding: 22px;
+  }
+
+  .payment {
+    padding: 22px;
+  }
+
+  .card-number {
+    width: 100%;
   }
 
   .download-section {
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 22px;
+    margin: 40px 0;
   }
 
   .download-section > div:nth-child(2) {
-    min-width: 65%;
+    flex: 1;
+    min-width: 180px;
   }
 
   .coming-soon {
     margin-right: 0;
+  }
+
+  .contact-section {
+    margin-bottom: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
   }
 }
