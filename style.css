@@ -558,3 +558,28 @@ footer small {
     transition-duration: 0.01ms !important;
   }
 }
+
+.service-link {
+  display: block;
+  color: inherit;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.service-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.service-more {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--gold);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.service-link:hover .service-more {
+  color: var(--blue);
+}
